@@ -1,0 +1,42 @@
+<!--
+	including header content which is common for all pages
+-->
+<%- include ../layouts/header.ejs %>
+
+<% if (messages.error) { %>
+	<p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+	<p style="color:green"><%- messages.success %></p>
+<% } %> 
+
+<table width='80%' border=0>
+	<tr style='text-align:left; background-color:#CCC'>
+		<th>UID</th>
+		<th>Create_Time</th>
+		<th>Update_Time</th>
+		<th>Update_Count</th>
+		<th>Action</th>
+	</tr>
+
+	<% if (data) { %>
+		<% data.forEach(function(user){ %>
+			<tr>
+				<td><%= user.uid %></td>
+				<td><%= user.create_time %></td>
+				<td><%= user.update_time %></td>
+				<td><%= user.update_count %></td>
+				<td>
+					<div style="float:left">
+						<a href='/user/edit/<%= user.id %>'>Edit</a> &nbsp; 
+						<form method="post" action="/user/delete/<%= user.id %>" style="float:right">
+							<input type="submit" name="delete" value='Delete' onClick="return confirm('Are you sure you want to delete?')" />
+							<input type="hidden" name="_method" value="DELETE" />
+						</form>
+					</div>
+				</td>
+			</tr>
+		<% }) %>
+	<% } %>
+</table>
