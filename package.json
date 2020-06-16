@@ -1,0 +1,27 @@
+{
+  "name": "linkit_7697_pn532_webpage",
+  "version": "0.0.1",
+  "description": "N/A",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "N/A"
+  ],
+  "author": "Yan Ying Chen",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "cookie-parser": "1.4.3",
+    "ejs": "2.5.6",
+    "express": "4.17.1",
+    "express-flash": "0.0.2",
+    "express-myconnection": "1.0.4",
+    "express-session": "1.17.0",
+    "express-validator": "3.2.0",
+    "method-override": "2.3.10",
+    "morgan": "1.9.1",
+    "mysql": "2.18.1"
+  }
+}
